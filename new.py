@@ -111,6 +111,24 @@ def predict_gender(audio_path, models, scaler, encoder):
         return None
 
 # Streamlit interface
+def set_background(image_path):
+    with open(image_path, "rb") as image_file:
+        image_data = image_file.read()
+    b64_image = base64.b64encode(image_data).decode()
+    bg_style = f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{b64_image}");
+            background-size: cover;
+            background-position: center;
+        }}
+        </style>
+    """
+    st.markdown(bg_style, unsafe_allow_html=True)
+
+background_home = "a.png"
+
+
 def main():
     st.set_page_config(page_title="Gender Prediction", layout="wide", initial_sidebar_state="collapsed")  
     # Sidebar navigation
@@ -124,6 +142,7 @@ def main():
 
     if page == "Main Menu":
         st.session_state.page = "Main Menu"
+        set_background(background_home)
         st.title("Welcome to the Gender Prediction by Voice App")
         st.write("""
             This application allows you to predict gender based on voice audio files. It uses machine learning models such as Random Forest, SVM, and KNN.
