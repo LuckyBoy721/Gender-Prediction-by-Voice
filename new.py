@@ -143,16 +143,32 @@ def main():
     page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
     if page == "Main Menu":
+        if page == "Main Menu":
         st.session_state.page = "Main Menu"
         set_background(background_home)
-        st.title("Welcome to the Gender Prediction by Voice App")
-        st.write("""
-            This application allows you to predict gender based on voice audio files. It uses machine learning models such as Random Forest, SVM, and KNN.
-            You can upload a `.wav` file and visualize its audio features like waveform and Mel-spectrogram. Additionally, the app provides model performance comparisons in terms of accuracy.
-            Use the 'Gender Prediction' section to predict the gender from an audio sample, and explore model accuracies in the 'Model Accuracies' section.
-        """)
-        st.write("Click the navigation button to go to the Gender Prediction page:")
         
+
+        st.markdown(
+            "<h1 style='color:gold;'>Welcome to the Gender Prediction by Voice App</h1>", 
+            unsafe_allow_html=True
+        )
+    
+        st.markdown(
+            """
+            <p style='color:gold;'>
+                This application allows you to predict gender based on voice audio files. It uses machine learning models such as Random Forest, SVM, and KNN.
+                You can upload a `.wav` file and visualize its audio features like waveform and Mel-spectrogram. Additionally, the app provides model performance comparisons in terms of accuracy.
+                Use the 'Gender Prediction' section to predict the gender from an audio sample, and explore model accuracies in the 'Model Accuracies' section.
+            </p>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        st.markdown(
+            "<p style='color:gold;'>Click the navigation button to go to the Gender Prediction page:</p>", 
+            unsafe_allow_html=True
+        )
+
 
     elif page == "Gender Prediction":
         set_background(background_home)
