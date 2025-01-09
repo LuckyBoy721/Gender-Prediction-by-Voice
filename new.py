@@ -151,8 +151,8 @@ def main():
             Use the 'Gender Prediction' section to predict the gender from an audio sample, and explore model accuracies in the 'Model Accuracies' section.
         """)
         st.write("Click the navigation button to go to the Gender Prediction page:")
-        if st.button("Lanjutkan"):
-            st.session_state["page"] = "Gender Prediction"
+        if st.button("Mulai Prediksi"):
+            st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="collapsed")
         
 
     elif  st.session_state["page"] == "Gender Prediction":
