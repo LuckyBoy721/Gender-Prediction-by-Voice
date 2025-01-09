@@ -152,7 +152,7 @@ def main():
         """)
         st.write("Click the navigation button to go to the Gender Prediction page:")
         if st.button("Mulai Prediksi"):
-            st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="collapsed")
+            st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="expanded")
         
 
     elif  st.session_state["page"] == "Gender Prediction":
