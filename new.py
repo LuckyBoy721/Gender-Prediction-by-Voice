@@ -143,7 +143,6 @@ def main():
     page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
     if page == "Main Menu":
-        if page == "Main Menu":
         st.session_state.page = "Main Menu"
         set_background(background_home)
         
