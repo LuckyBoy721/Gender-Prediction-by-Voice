@@ -83,7 +83,7 @@ def load_model_accuracies():
 
 # Fungsi untuk menampilkan horizontal bar chart akurasi model
 def display_accuracy_chart(accuracies):
-      st.subheader("Model Accuracy Chart")
+    st.subheader("Model Accuracy Chart")
     fig, ax = plt.subplots()
     model_names = list(accuracies.keys())
     scores = list(accuracies.values())
