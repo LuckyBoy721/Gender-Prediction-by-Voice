@@ -126,7 +126,7 @@ def set_background(image_path):
     """
     st.markdown(bg_style, unsafe_allow_html=True)
 
-background_home = "a.png"
+background_home = "a.jpg"
 
 
 def main():
