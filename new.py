@@ -94,7 +94,7 @@ def display_accuracy_chart(accuracies):
     ax.set_title('Model Accuracy Comparison', color='black')
 
 
-     for bar in bars:
+    for bar in bars:
         width = bar.get_width()  # Lebar bar yang mewakili skor akurasi
         yval = bar.get_y() + bar.get_height() / 2  # Posisi vertikal teks di tengah bar
         ax.text(width, yval, f'{width:.2f}', va='center', ha='left', color='black')  # Menampilkan nilai akurasi
