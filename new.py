@@ -144,6 +144,7 @@ def main():
 
     if st.session_state["page"] == "Main Menu":
         set_background(background_home)
+        st.set_page_config(page_title="Gender Prediction", layout="wide", initial_sidebar_state="collapsed")  
         st.title("Welcome to the Gender Prediction by Voice App")
         st.write("""
             This application allows you to predict gender based on voice audio files. It uses machine learning models such as Random Forest, SVM, and KNN.
