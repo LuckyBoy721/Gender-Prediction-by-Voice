@@ -41,8 +41,9 @@ def visualize_audio(audio_path):
         # Plot Waveform
         st.subheader("Waveform")
         fig, ax = plt.subplots()
-        librosa.display.waveshow(audio, sr=sr, ax=ax)
+        librosa.display.waveshow(audio, sr=sr, ax=ax, color="gold")
         ax.set(title="Waveform of the Uploaded Audio")
+        ax.set_facecolor('#1e1e21')
         st.pyplot(fig)
 
         # Plot Mel-Spectrogram
