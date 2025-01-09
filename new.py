@@ -140,7 +140,6 @@ def main():
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
-    st.sidebar.image("b.jpg")
     page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
     if page == "Main Menu":
@@ -153,6 +152,8 @@ def main():
             Use the 'Gender Prediction' section to predict the gender from an audio sample, and explore model accuracies in the 'Model Accuracies' section.
         """)
         st.write("Click the navigation button to go to the Gender Prediction page:")
+        if st.button("Mulai Prediksi"):
+            st.session_state.page = "Gender Prediction"
         
 
     elif page == "Gender Prediction":
