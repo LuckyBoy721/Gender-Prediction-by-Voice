@@ -142,7 +142,7 @@ def main():
     st.sidebar.title("Navigation")
     page = st.sidebar.selectbox("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
-    if st.session_state["page"] == "Main Menu":
+    if page == "Main Menu":
         set_background(background_home)
        
         st.title("Welcome to the Gender Prediction by Voice App")
@@ -156,7 +156,7 @@ def main():
         #     st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="expanded")
         
 
-    elif  st.session_state["page"] == "Gender Prediction":
+    elif  page == "Gender Prediction":
         set_background(background_home)
 
         st.session_state.page = "Gender Prediction"
@@ -196,7 +196,7 @@ def main():
             else:
                 st.error("Failed to process the audio file. Please try again.")
 
-    elif  st.session_state["page"] == "Model Accuracies":
+    elif page == "Model Accuracies":
         set_background(background_home)
         st.session_state.page = "Model Accuracies"
         st.title("Model Accuracies")
