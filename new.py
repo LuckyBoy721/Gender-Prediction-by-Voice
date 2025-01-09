@@ -83,24 +83,16 @@ def load_model_accuracies():
 
 # Fungsi untuk menampilkan horizontal bar chart akurasi model
 def display_accuracy_chart(accuracies):
-  st.subheader("Model Accuracy Chart")
+      st.subheader("Model Accuracy Chart")
     fig, ax = plt.subplots()
-    
-    # Data untuk grafik
     model_names = list(accuracies.keys())
     scores = list(accuracies.values())
     
-    # Gaya tema hitam
-    fig.patch.set_facecolor('#2E2E2E')  # Warna latar belakang untuk seluruh grafik
-    ax.set_facecolor('#1E1E1E')         # Warna latar belakang untuk area plot
-    ax.barh(model_names, scores, color='skyblue', edgecolor='white')  # Warna bar dan tepi
-    ax.set_xlabel('Accuracy', color='white')  # Warna label sumbu X
-    ax.set_title('Model Accuracy Comparison', color='white')  # Warna judul
-    ax.tick_params(axis='x', colors='white')  # Warna untuk angka sumbu X
-    ax.tick_params(axis='y', colors='white')  # Warna untuk angka sumbu Y
-    
-    # Tampilkan grafik
+    ax.barh(model_names, scores, color='orange')
+    ax.set_xlabel('Accuracy')
+    ax.set_title('Model Accuracy Comparison')
     st.pyplot(fig)
+
 
 
 # Fungsi untuk prediksi gender
