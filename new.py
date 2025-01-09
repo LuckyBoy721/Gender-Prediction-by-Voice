@@ -140,7 +140,7 @@ def main():
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
-    st.sidebar.image("b.jpg)
+    st.sidebar.image("b.jpg")
     page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
     if page == "Main Menu":
