@@ -83,15 +83,25 @@ def load_model_accuracies():
 
 # Fungsi untuk menampilkan horizontal bar chart akurasi model
 def display_accuracy_chart(accuracies):
-    st.subheader("Model Accuracy Chart")
+  st.subheader("Model Accuracy Chart")
     fig, ax = plt.subplots()
+    
+    # Data untuk grafik
     model_names = list(accuracies.keys())
     scores = list(accuracies.values())
     
-    ax.barh(model_names, scores, color='skyblue')
-    ax.set_xlabel('Accuracy')
-    ax.set_title('Model Accuracy Comparison')
+    # Gaya tema hitam
+    fig.patch.set_facecolor('#2E2E2E')  # Warna latar belakang untuk seluruh grafik
+    ax.set_facecolor('#1E1E1E')         # Warna latar belakang untuk area plot
+    ax.barh(model_names, scores, color='skyblue', edgecolor='white')  # Warna bar dan tepi
+    ax.set_xlabel('Accuracy', color='white')  # Warna label sumbu X
+    ax.set_title('Model Accuracy Comparison', color='white')  # Warna judul
+    ax.tick_params(axis='x', colors='white')  # Warna untuk angka sumbu X
+    ax.tick_params(axis='y', colors='white')  # Warna untuk angka sumbu Y
+    
+    # Tampilkan grafik
     st.pyplot(fig)
+
 
 # Fungsi untuk prediksi gender
 def predict_gender(audio_path, models, scaler, encoder):
@@ -153,6 +163,8 @@ def main():
         
 
     elif page == "Gender Prediction":
+        set_background(background_home)
+
         st.session_state.page = "Gender Prediction"
         st.title("Gender Prediction from Voice")
         st.write("Upload a .wav file to predict the gender and visualize its features.")
@@ -191,6 +203,7 @@ def main():
                 st.error("Failed to process the audio file. Please try again.")
 
     elif page == "Model Accuracies":
+        set_background(background_home)
         st.session_state.page = "Model Accuracies"
         st.title("Model Accuracies")
         
