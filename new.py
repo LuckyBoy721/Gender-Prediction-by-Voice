@@ -109,9 +109,17 @@ def predict_gender(audio_path, models, scaler, encoder):
                 "gender": encoder.inverse_transform(prediction)[0],
                 "probabilities": probabilities[0]
             }
+            
+            # Tambahkan prediksi dengan pesan sesuai jenis kelamin
+            if prediction[0] == 1:  # Jika prediksi adalah 1 (Male)
+                st.error(f"The Voice is *likely a Male*.")
+            else:  # Jika prediksi adalah 0 (Female)
+                st.success(f"The Voice is *likely a Female*.")
+        
         return predictions
     else:
         return None
+
 
 # Streamlit interface
 def set_background(image_path):
