@@ -87,7 +87,8 @@ def display_accuracy_chart(accuracies):
     fig, ax = plt.subplots()
     model_names = list(accuracies.keys())
     scores = list(accuracies.values())
-    
+    fig.patch.set_facecolor('#1e1e21')  
+    ax.set_facecolor('#1e1e21') 
     ax.barh(model_names, scores, color='orange')
     ax.set_xlabel('Accuracy')
     ax.set_title('Model Accuracy Comparison')
