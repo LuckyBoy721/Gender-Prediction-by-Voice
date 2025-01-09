@@ -142,8 +142,7 @@ def main():
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
-    if page == "Main Menu":
-        st.session_state.page = "Main Menu"
+    if st.session_state["page"] == "Main Menu":
         set_background(background_home)
         st.title("Welcome to the Gender Prediction by Voice App")
         st.write("""
