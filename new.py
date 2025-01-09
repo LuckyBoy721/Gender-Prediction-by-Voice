@@ -140,11 +140,11 @@ def main():
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
+    page = st.sidebar.selectbox("Go to", ["Main Menu", "Gender Prediction", "Model Accuracies"])
 
     if st.session_state["page"] == "Main Menu":
         set_background(background_home)
-        st.set_page_config(page_title="Gender Prediction", layout="wide", initial_sidebar_state="collapsed")  
+       
         st.title("Welcome to the Gender Prediction by Voice App")
         st.write("""
             This application allows you to predict gender based on voice audio files. It uses machine learning models such as Random Forest, SVM, and KNN.
@@ -152,8 +152,8 @@ def main():
             Use the 'Gender Prediction' section to predict the gender from an audio sample, and explore model accuracies in the 'Model Accuracies' section.
         """)
         st.write("Click the navigation button to go to the Gender Prediction page:")
-        if st.button("Mulai Prediksi"):
-            st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="expanded")
+        # if st.button("Mulai Prediksi"):
+        #     st.set_page_config(page_title="Gender Prediction App", layout="wide", initial_sidebar_state="expanded")
         
 
     elif  st.session_state["page"] == "Gender Prediction":
